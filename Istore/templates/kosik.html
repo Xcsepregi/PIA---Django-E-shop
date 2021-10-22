@@ -1,0 +1,28 @@
+{% extends "home_page.html" %}
+{% block nadpis %}
+MPM Internetovy obchod
+{% endblock %}
+
+{% block obsah %}
+{% if pol %}
+<h2> Košik </h2>
+
+Objednávka:
+<table border="1">
+<tr> <td>Názov</td>   <td>Jednotková cena</td>   <td>Objednaný počet</td>
+
+{% for p in pol %}
+
+<tr> <td>{{p.tovar.popis}}</td> <td>{{p.tovar.cena}}</td> <td>  {{p.pocet}} </td> <td> <a href="{% url 'Istore.views.vymaz_polozku' p.id %}"> Vymaž</a></td></tr>
+{% endfor %}
+</table>
+Suma:{{suma}} eur
+<ul></ul>
+
+<a href="{% url 'Istore.views.platba' %}" > Zaplatiť</a>
+<a href="{% url 'Istore.views.front_page' %}" > Späť na kategórie</a>
+{% else %}
+<h3>Košík je momentálne prázdny.</h3>
+<a href="{% url 'Istore.views.front_page' %}" > Späť na kategórie</a>
+{% endif %}
+{% endblock %}

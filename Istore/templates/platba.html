@@ -1,0 +1,11 @@
+{% extends "home_page.html" %}
+{% block nadpis %}
+MPM Internetový obchod
+{% endblock %}
+
+{% block obsah %}
+<h1>Ďakujeme za nákup, tovar bol odoslaný na Vašu adresu!</h1>
+
+<a href="{% url 'Istore.views.front_page' %}" > Späť na kategórie</a>
+<a href="{% url 'Istore.views.profil' %}" > Späť na Váš profil</a>
+{% endblock %}

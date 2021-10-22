@@ -1,0 +1,73 @@
+#Nadpis {
+  width: 99%;
+  height: 40px;
+  position: absolute;
+  left:0;
+  top:0;
+
+  color:blue;
+  background-color:gray;
+  font: italic bold 30px Georgia, serif;
+  border: 5px outset red;
+  text-align:center;
+  text-shadow: 2px 1px red;
+  margin-bottom:  50px;
+}
+
+#logo {
+  position: absolute;
+  top:0;
+  left:0;
+}
+
+#obsah {
+  color: black;
+  margin-top: 50px;
+  padding-bottom: 40px;
+  position: absolute;
+  left:13em;
+}
+
+nav {
+    position: fixed;
+    top:50px;
+    left: 0;
+    background-color:gray;
+    color:yellow;
+    width:12em;
+    display:inline;
+}
+
+nav ul {
+    padding:0;
+    list-style-position:inside;
+}
+
+nav ul li {
+    border:2px outset black;
+    margin:.5em;
+    padding:.5em;
+}
+
+nav ul li a{
+    color:black;
+    display:block;
+}
+
+nav ul li:hover {
+    background-color:blue;
+    color:black;
+    font:italic Times New Roman;
+}
+
+#footer {
+    border: 2px solid Red;
+    margin-top: 50px;
+    background-color:gray;
+    text-align:center;
+    position: fixed;
+    left:0;
+    bottom: 0;
+    height: 25px;
+    width: 99%;
+  }

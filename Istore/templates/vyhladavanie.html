@@ -1,0 +1,17 @@
+{% extends "home_page.html" %}
+{% block nadpis %}
+MPM Internetový Obchod
+{% endblock %}
+
+{% block obsah %}
+<h1>Vyhľadávanie</h1>
+<form method="POST">
+{% csrf_token %}
+<table>
+{{form}}
+</table>
+<input type="submit" value="Hladat">
+</form>
+<h2> Vyhľadávanie nie je case-sensitive!</h2>
+<h2> Pre úspešné vyhľadávanie je nutné dodržiavať diakritiku!</h2>
+{% endblock %}

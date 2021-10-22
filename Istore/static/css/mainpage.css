@@ -1,0 +1,76 @@
+header {
+    color:blue;
+    background-color:gray;
+    font: italic bold 30px Georgia, serif;
+    border: 10px outset red;
+    text-align:center;
+    text-shadow: 2px 1px red;
+}
+
+user {
+    color:black;
+    position: absolute;
+    top:.0001px; left:1100px;
+    font: italic bold 15px Georgia, serif;
+    text-align:right;
+    float:right;
+}
+
+novinky {
+    color:red;
+    border: 3.5px outset red;
+    position: absolute;
+    top:80; left:600;
+}
+
+vypis {
+    border-left:20em solid #dfd;
+    clear:center;
+    text-align:center;
+    float:center;
+}
+
+nav {
+    position: absolute;
+    top:65px; left:8px;
+    background-color:gray;
+    color:black;
+    float:left;
+    width:12em;
+    display:inline;
+}
+
+nav ul {
+    padding:1em;
+    margin:-10px;
+    list-style-type:circle;
+    list-style-position:inside;
+}
+
+nav ul li {
+    border:2px outset black;
+    margin:.5em;
+    padding:.5em;
+}
+
+nav ul li a{
+    color:black;
+    display:block;
+}
+
+nav ul li:hover {
+    background-color:blue;
+    color:black;
+    font:italic Times New Roman;
+}
+
+footer {
+    border: 2px solid black;
+    background-color:gray;
+    text-align:center;
+    padding:0.5em;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}

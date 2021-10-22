@@ -1,0 +1,42 @@
+{% load staticfiles %}
+
+<!DOCTYPE hmtl>
+<html>
+    <head>
+        <meta http-equiv="Content-type" content="text/html;charset=UTF-8" />
+        <title>MPM Internetovy obchod</title>
+        <link rel="stylesheet" href="/static/mainpage.css" />
+</head>
+    <body>
+        <header>
+            <div id=Nadpis>
+              {% block nadpis}
+              {% endblock %}
+            </div>
+        <user>
+            <ul>
+             <li><a href="Prihlasenie.html">Prihlasenie</a></li>
+            <li><a href="{% url 'Istore.views.registracia' %}"/>Registracia</a></li>
+        </user>
+        </header>
+
+<div id=obsah>
+{% block obsah %}
+{% endblock %}
+</div>
+
+<nav>
+    <ul>
+    <li><a href="Sortiment.html">Predavane tovary</a></li>
+    <li><a href="{% url 'Istore.views.podmienky' %}"/>Obchodne podmienky</a></li>
+    <li><a href="{% url 'Istore.views.kontakt' %}"/>Kontakt</a></li>
+</nav>
+
+<footer>
+Programovanie Internetovych Aplikacii 2017
+|Nikolas Csepregi|Internetovy obchod
+</footer>
+
+    </body>
+</html>
+{% endblock %}

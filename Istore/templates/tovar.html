@@ -1,0 +1,24 @@
+{% extends "home_page.html" %}
+{% block nadpis %}
+MPM Internetový obchod
+{% endblock %}
+
+{% block obsah %}
+<h1>{{tov.popis}}</h1>
+Vyrobca : {{tov.vyrobca}}<br>
+Cena : {{tov.cena}} €
+<br>
+{% if prihlaseny_email %}
+<form method="post">
+<table>
+{% csrf_token %}
+{{form}}
+</table>
+<input type="submit" value="Do košíka"/>
+</form>
+{% else %}
+Nákup je možný len pre registrovaných užívateľov.<br>
+{% endif %}
+<a href="{% url 'Istore.views.zoznam_tovaru' kat.id %}" >Späť na sortiment</a>
+
+{% endblock %}

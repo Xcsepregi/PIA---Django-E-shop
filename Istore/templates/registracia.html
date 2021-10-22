@@ -1,0 +1,14 @@
+{% extends "home_page.html" %}
+{% block nadpis %}
+Registrácia
+{% endblock %}
+
+{% block obsah %}
+<form method="POST">
+{% csrf_token %}
+<table>
+{{form}}
+</table>
+<input type="submit" value="Registrovat">
+</form>
+{% endblock %}

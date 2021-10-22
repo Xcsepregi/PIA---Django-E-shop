@@ -1,0 +1,54 @@
+{% load staticfiles %}
+
+<!DOCTYPE hmtl>
+<html>
+    <head>
+        <meta http-equiv="Content-type" content="text/html;charset=UTF-8" />
+        <title>MPM Internetový obchod</title>
+        <link rel="stylesheet" href="/static/mainpage.css" media="all">
+    </head>
+    <body>
+        <header>
+            <div id="Nadpis">
+              {% block nadpis %}
+              {% endblock %}
+             <div id="logo">
+                <a href="{% url 'Istore.views.front_page' %}">
+                <img src="/static/MPM.PNG"/>
+                </a>
+              </div>
+            </div>
+        </header>
+
+  <div id="obsah">
+{% block obsah %}
+{% endblock %}
+  </div>
+
+<nav>
+    <ul>
+    {% if prihlaseny_email %}
+    {% csrf_token %}
+    Prihlasený uživateľ:<br> {{prihlaseny_email.meno}}
+    <li><a href="{% url 'Istore.views.kosik' %}"/> Nákupný košík</a></li>
+    <li><a href="{% url 'Istore.views.vyhladavanie' %}"/>  Vyhľadávanie </a></li>
+    <li><a href="{% url 'Istore.views.profil' %}"/> Profil zákaznika</a></li>
+    <li><a href="{% url 'Istore.views.podmienky' %}"/>Obchodné podmienky</a></li>
+    <li><a href="{% url 'Istore.views.kontakt' %}"/>Kontakt</a></li>
+    <li><a href="{% url 'Istore.views.logout' %}">Odhlásenie</a></li>
+    {% else %}
+    <li><a href="{% url 'Istore.views.vyhladavanie' %}"/>  Vyhľadávanie </a></li>
+    <li><a href="{% url 'Istore.views.podmienky' %}"/>Obchodné podmienky</a></li>
+    <li><a href="{% url 'Istore.views.kontakt' %}"/>Kontakt</a></li>
+    <li><a href="{% url 'Istore.views.login' %}">Prihlásenie</a></li>
+    <li><a href="{% url 'Istore.views.registracia' %}"/>Registrácia</a></li>
+    {% endif %}
+</nav>
+
+<div id="footer">
+Programovanie Internetových Aplikácii 2017
+|Nikolas Csepregi|Internetový obchod
+</div>
+
+    </body>
+</html>

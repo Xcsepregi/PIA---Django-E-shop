@@ -1,0 +1,27 @@
+{% extends "home_page.html" %}
+{% block nadpis %}
+MPM Internetovy obchod
+{% endblock %}
+
+{% block obsah %}
+<h1>Profil užívateľa</h1>
+Meno: {{zak.meno}}<br>
+Priezvisko: {{zak.priezvisko}}<br>
+Email: {{zak.email}}<br>
+Adresa: {{zak.adresa}}<br><br>
+
+<h2>Objednávky</h2>
+<table border="1">
+<tr> <td>Názov</td>   <td>Suma</td>   <td>Stav</td>
+
+{% for p in pol %}
+
+{% if p.objednavka.zaplatenie %}
+<tr> <td>{{p.id}}</td> <td>{{p.tovar.cena}}</td> <td>  Vybavená </td> </tr>
+{% else %}
+<tr> <td>{{p.id}}</td> <td>{{p.tovar.cena}}</td> <td>  Nevybavená </td> </tr>
+{% endif %}
+{% endfor %}
+</table
+
+{% endblock %}

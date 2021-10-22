@@ -1,0 +1,14 @@
+{% extends "home_page.html" %}
+{% block nadpis %}
+MPM Internetový obchod
+{% endblock %}
+
+{% block obsah %}
+<h1>Sortiment</h1>
+<ul>
+{% for k in kat %}
+<li><h2><a href="{% url 'Istore.views.zoznam_tovaru' k.id %}" >{{k}}</a></h2>
+</li>
+{% endfor %}
+</ul>
+{% endblock %}

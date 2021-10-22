@@ -1,0 +1,22 @@
+{% extends "home_page.html" %}
+{% block nadpis %}
+MPM Internetový obchod
+{% endblock %}
+
+  {% block obsah %}
+  <h1>Výsledky hľadania pre {{ret}}: </h1>
+  {% if tov %}
+  <ul>
+  {% for t in tov %}
+  <li><h2><a href="{% url 'Istore.views.tovar' t.id %}" >{{t.popis}}</h2></a>
+  <h3>{{t.vyrobca}}<br>
+  {{t.cena}}</h3>
+  </li>
+  {% endfor %}
+  {% else %}
+  Hľadanie nenašlo žiadne výsledky.<br>
+  {% endif %}
+  </ul>
+  <a href="{% url 'Istore.views.front_page' %}" >Späť na kategórie</a><br>
+  <a href="{% url 'Istore.views.vyhladavanie' %}" >Späť na vyhľadávanie</a>
+  {% endblock %}

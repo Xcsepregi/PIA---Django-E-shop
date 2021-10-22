@@ -1,0 +1,11 @@
+{% extends "home_page.html" %}
+{% block nadpis %}
+MPM Internetovy obchod
+{% endblock %}
+
+{% block obsah %}
+<h1>Dakujeme za registráciu, môžete sa prihlásiť a začať nakupovať!</h1>
+
+<a href="{% url 'Istore.views.front_page' %}" > Späť na kategórie</a>
+<a href="{% url 'Istore.views.login' %}" > Prihlásenie pre užívateľov</a>
+{% endblock %}
